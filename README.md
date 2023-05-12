@@ -66,21 +66,31 @@ See Baseline Webpage in action
 
 ## Project Setup
 
-1. `npx baseline-webpage my-app` where `my-app` is the name of your app
-2. `cd my-app` and `npm run aws:profile` which will configure AWS CLI with a new profile and is only required for deploying from local (if you have issues please update aws cli)
+[Create in AWS CloudFormation](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/create/review?templateURL=https://public-cf-bsln.s3.ap-southeast-2.amazonaws.com/2023131A0a-new.templatema0f9byikk&stackName=Baseline-Webpage&param_C9InstanceType=t3.medium)
+
+Use link created in `Outputs`, this should open Cloud9.
+
+In the terminal at the bottom of the screen
+```bash
+cd app
+npm install
+npm run setup
+```
 
 ## Run Locally
 
 1. `npm start`
 
+Once it is running to view the site running from the top bar Tools -> Preview -> Preview Running Application.
+
 ## Deploying
 
-1. `npm run deploy:dev`
-2. The output from the deploy will show `WebsiteUrl` that the site was deployed to. If you need to find it again you can run `npm run info:dev`
+1. `npm run deploy:staging`
+2. The output from the deploy will show `WebsiteUrl` that the site was deployed to. If you need to find it again you can run `npm run info:staging`
 
 ## Deploy a Change
 
-1. `npm run deploy:dev`
+1. `npm run deploy:staging`
 2. Allow some time for the Cloudfront cache invalidation to finish to see changes in browser
 
 ## Adding a Domain
@@ -93,7 +103,7 @@ See Baseline Webpage in action
 
 ## Remove Stack
 
-To destroy the deployed stack so it is no longer on AWS run `npm run remove:dev`.
+To destroy the deployed stack so it is no longer on AWS run `npm run remove:staging`.
 
 ## Environment Flag
 
