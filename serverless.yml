@@ -19,8 +19,6 @@ provider:
   name: aws
   runtime: nodejs14.x
   profile: default
-  region: ${opt:region}
-  stage: ${opt:stage}
   deploymentMethod: direct
   deploymentPrefix: ${self:service}-${sls:stage}
 

@@ -36,12 +36,12 @@
   "scripts": {
     "build": "NODE_OPTIONS=--max_old_space_size=8192 GENERATE_SOURCEMAP=false react-scripts build",
     "start": "export PORT=8080 && react-scripts start",
-    "deploy:staging": "npm run build && npx serverless deploy --verbose --stage staging --region ap-southeast-2",
-    "remove:staging": "npx serverless remove --stage staging --region ap-southeast-2",
-    "deploy:prod": "npm run build && npx serverless deploy --verbose --stage prod --region ap-southeast-2",
-    "remove:prod": "npx serverless remove --stage prod --region ap-southeast-2",
-    "info:staging": "npx serverless info --verbose --stage staging --region ap-southeast-2",
-    "info:prod": "npx serverless info --verbose --stage prod --region ap-southeast-2",
+    "deploy:staging": "npm run build && npx serverless deploy --verbose --stage staging --region $(aws configure get region) --aws-profile default",
+    "remove:staging": "npx serverless remove --stage staging --region $(aws configure get region) --aws-profile default",
+    "deploy:prod": "npm run build && npx serverless deploy --verbose --stage prod --region $(aws configure get region) --aws-profile default",
+    "remove:prod": "npx serverless remove --stage prod --region $(aws configure get region) --aws-profile default",
+    "info:staging": "npx serverless info --verbose --stage staging --region $(aws configure get region) --aws-profile default",
+    "info:prod": "npx serverless info --verbose --stage prod --region $(aws configure get region) --aws-profile default",
     "rename": "./scripts/rename.sh",
     "aws:profile": "./scripts/setup-aws-profile.sh baseline-webpage",
     "lint": "npx eslint --ext .tsx,.ts src/"
