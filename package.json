@@ -42,7 +42,7 @@
     "remove:prod": "npx serverless remove --stage prod --region $(aws configure get region) --aws-profile default",
     "info:staging": "npx serverless info --verbose --stage staging --region $(aws configure get region) --aws-profile default",
     "info:prod": "npx serverless info --verbose --stage prod --region $(aws configure get region) --aws-profile default",
-    "rename": "./scripts/rename.sh",
+    "setup": "./scripts/setup.sh",
     "aws:profile": "./scripts/setup-aws-profile.sh baseline-webpage",
     "lint": "npx eslint --ext .tsx,.ts src/"
   },

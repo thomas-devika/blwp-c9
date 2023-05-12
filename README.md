@@ -1,4 +1,4 @@
-# Baseline Webpage
+# Baseline Webpage - Cloud9
 
 A simple React static site that is deployed to AWS using serverless.
 
@@ -58,12 +58,6 @@ See Baseline Webpage in action
 
 [<img width="697" alt="Demo video" src="https://user-images.githubusercontent.com/72828539/211226462-4cea6e83-9843-4927-8ffb-d92b86f15173.png">](https://youtu.be/NRoE0rNcfBM)
 
-## Local Requirements
-
-- Node.js 16 [(we suggest using nvm)](https://github.com/nvm-sh/nvm#install--update-script)
-- NPM version 7+ [installing npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-- [AWS CLI v2](https://aws.amazon.com/cli) (only required for local deployment)
-
 ## Project Setup
 
 [Create in AWS CloudFormation](https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/create/review?templateURL=https://public-cf-bsln.s3.ap-southeast-2.amazonaws.com/2023131A0a-new.templatema0f9byikk&stackName=Baseline-Webpage&param_C9InstanceType=t3.medium)
@@ -101,9 +95,11 @@ Once it is running to view the site running from the top bar Tools -> Preview ->
 - Add an "Alternate domain name" to the Distribution that matches your buckets name
 - Edit Route53 and point the domain with an A record to the Distribution
 
-## Remove Stack
+## Remove
 
 To destroy the deployed stack so it is no longer on AWS run `npm run remove:staging`.
+
+And delete the CloudFormation Stack after the remove has finished to remove Cloud9.
 
 ## Environment Flag
 
